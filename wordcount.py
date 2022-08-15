@@ -10,15 +10,26 @@ How many were going to St. Ives?
 """
 import sys
 
-def le_words(file_name):
+# def le_words(file_name):
+#   file = open(file_name)
+
+#   count_words = {}
+
+#   for line in file:
+#     line = line.rstrip()
+#     line = line.split(" ")
+#     for word in line:
+#         count_words[word] = count_words.get(word, 0) + 1 
+#   print(count_words)
+# le_words(sys.argv[1])
+
+def tokenize(file_name):
   file = open(file_name)
-
-  count_words = {}
-
+  words = []
   for line in file:
     line = line.rstrip()
     line = line.split(" ")
     for word in line:
-        count_words[word] = count_words.get(word, 0) + 1 
-  print(count_words)
-le_words(sys.argv[1])
+      words.append(word)
+  return words
+print(tokenize("test.txt")) 
