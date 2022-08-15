@@ -8,8 +8,8 @@ Kits, cats, sacks, wives.
 How many were going to St. Ives?
 
 """
+import sys
 
-# put your code here.
 def le_words(file_name):
   file = open(file_name)
 
@@ -21,5 +21,4 @@ def le_words(file_name):
     for word in line:
         count_words[word] = count_words.get(word, 0) + 1 
   print(count_words)
-le_words("test.txt")
-le_words("twain.txt")
+le_words(sys.argv[1])
