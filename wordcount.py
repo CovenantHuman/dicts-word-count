@@ -34,6 +34,19 @@ def tokenize(file_name):
   return words
 print(tokenize("test.txt")) 
 
+def normalize_text(words):
+  punctuation = [",", "!", ".", "?"]
+  new_words = []
+  for word in words:
+    word = word.lower()
+    for pun in punctuation:
+      if pun in word: 
+        word = word[:-1]
+    new_words.append(word)
+  return new_words
+
+
+
 def count_words(words):
     count = {}
     for word in words:
@@ -44,4 +57,5 @@ print(count_words(tokenize("test.txt")))
 def print_words_count(word_counts):
   for key in word_counts:
     print(key, word_counts[key])
-print_words_count(count_words(tokenize("test.txt")))
+    
+print_words_count(count_words(normalize_text(tokenize("test.txt"))))
