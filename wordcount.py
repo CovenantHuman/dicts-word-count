@@ -33,3 +33,15 @@ def tokenize(file_name):
       words.append(word)
   return words
 print(tokenize("test.txt")) 
+
+def count_words(words):
+    count = {}
+    for word in words:
+        count[word] = count.get(word, 0) + 1 
+    return count
+print(count_words(tokenize("test.txt")))
+
+def print_words_count(word_counts):
+  for key in word_counts:
+    print(key, word_counts[key])
+print_words_count(count_words(tokenize("test.txt")))
